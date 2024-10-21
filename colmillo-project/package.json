@@ -1,0 +1,74 @@
+{
+  "name": "colmillo-project",
+  "description": "Scheadule for activities",
+  "version": "0.0.0",
+  "homepage": "",
+  "private": true,
+  "keywords": [
+    "feathers"
+  ],
+  "author": {},
+  "contributors": [],
+  "bugs": {},
+  "engines": {
+    "node": ">= 20.11.1"
+  },
+  "feathers": {
+    "language": "js",
+    "packager": "npm",
+    "database": "mysql",
+    "framework": "koa",
+    "transports": [
+      "rest",
+      "websockets"
+    ],
+    "schema": "typebox"
+  },
+  "directories": {
+    "lib": "src",
+    "test": "test"
+  },
+  "files": [
+    "lib/client.js",
+    "lib/**/*.d.ts",
+    "lib/**/*.shared.js"
+  ],
+  "main": "src/client",
+  "type": "module",
+  "scripts": {
+    "start": "node src",
+    "dev": "nodemon src/",
+    "prettier": "npx prettier \"**/*.js\" --write",
+    "mocha": "cross-env NODE_ENV=test mocha test/ --recursive --exit",
+    "test": "cross-env NODE_ENV=test npm run migrate && npm run mocha",
+    "bundle:client": "npm pack --pack-destination ./public",
+    "migrate": "knex migrate:latest",
+    "migrate:make": "knex migrate:make -x mjs"
+  },
+  "dependencies": {
+    "@feathersjs/adapter-commons": "^5.0.30",
+    "@feathersjs/authentication": "^5.0.30",
+    "@feathersjs/authentication-client": "^5.0.30",
+    "@feathersjs/configuration": "^5.0.30",
+    "@feathersjs/errors": "^5.0.30",
+    "@feathersjs/feathers": "^5.0.30",
+    "@feathersjs/knex": "^5.0.30",
+    "@feathersjs/koa": "^5.0.30",
+    "@feathersjs/schema": "^5.0.30",
+    "@feathersjs/socketio": "^5.0.30",
+    "@feathersjs/transport-commons": "^5.0.30",
+    "@feathersjs/typebox": "^5.0.30",
+    "knex": "^3.1.0",
+    "mysql": "^2.18.1",
+    "winston": "^3.15.0"
+  },
+  "devDependencies": {
+    "@feathersjs/cli": "^5.0.30",
+    "@feathersjs/rest-client": "^5.0.30",
+    "axios": "^1.7.7",
+    "cross-env": "^7.0.3",
+    "mocha": "^10.7.3",
+    "nodemon": "^3.1.7",
+    "prettier": "^3.3.3"
+  }
+}
