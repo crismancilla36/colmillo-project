@@ -7,6 +7,7 @@ import socketio from '@feathersjs/socketio'
 import { configurationValidator } from './configuration.js'
 import { logError } from './hooks/log-error.js'
 import { mysql } from './mysql.js'
+import { authentication } from './authentication.js'
 import { services } from './services/index.js'
 import { channels } from './channels.js'
 
@@ -33,6 +34,8 @@ app.configure(
 )
 app.configure(mysql)
 
+app.configure(authentication)
+
 app.configure(services)
 app.configure(channels)
 
@@ -49,6 +52,23 @@ app.hooks({
 app.hooks({
   setup: [],
   teardown: []
+})
+
+class MyService {
+  async find(params) {}
+  async get(id, params) {}
+  async create(data, params) {}
+  async update(id, data, params) {}
+  async patch(id, data, params) {}
+  async remove(id, params) {}
+  async setup(path, app) {}
+  async teardown(path, app) {}
+}
+
+app.use('myservice', new MyService())
+
+app.service('myservice').on('created', (data) => {
+  console.log('Got created event', data)
 })
 
 export { app }
