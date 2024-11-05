@@ -10,11 +10,12 @@ client.configure(feathers.socketio(socket))
 client.configure(feathers.authentication())
 
 // Login screen
-const loginTemplate = (error) => `<div class="login flex min-h-screen bg-neutral justify-center items-center">
-<div class="card w-full max-w-sm bg-base-100 px-4 py-8 shadow-xl">
-  <div class="px-4"><i alt="" class="h-32 w-32 block mx-auto i-logos-feathersjs invert"></i>
+const loginTemplate = (error) => `<div class="login">
+<div class="card">
+  <div>
+  <img src="assets/toji.jpg" alt="Logo" class="bordered-image">
     <h1 class="text-5xl font-bold text-center my-5 bg-clip-text bg-gradient-to-br">
-      Feathers lista
+      Iniciar sesión
     </h1>
   </div>
   <form class="card-body pt-2">

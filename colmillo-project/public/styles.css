@@ -1,0 +1,163 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #333; /* Fondo gris claro */
+  }
+  
+  /* Estilo para el contenedor de login */
+  .login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Altura de la ventana */
+  }
+  
+  /* Estilo para la tarjeta de login */
+  .card {
+    background-color: #333; /* Fondo blanco para la tarjeta */
+    border-radius: 12px; /* Bordes redondeados */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 350px; /* Ancho ajustado */
+  }
+  
+  /* Imagen con bordes */
+  .bordered-image {
+    width: 100%; /* Imagen ocupa todo el ancho */
+    border-radius: 12px; /* Bordes redondeados */
+  }
+  
+  /* Estilo para los títulos */
+  h1 {
+    margin: 20px 0; /* Margen arriba y abajo */
+    font-size: 2.5rem; /* Tamaño de fuente */
+    text-align: center; /* Centrar texto */
+    background: linear-gradient(to right, #6a11cb, #2575fc); /* Gradiente */
+    -webkit-background-clip: text; /* Clip del fondo para texto */
+    -webkit-text-fill-color: transparent; /* Relleno del texto transparente */
+  }
+  
+  /* Estilo para formularios */
+  .card-body {
+    padding-top: 10px; /* Espaciado superior */
+  }
+  
+  /* Estilo para los controles del formulario */
+  .form-control {
+    margin-top: 1rem; /* Espaciado entre controles */
+  }
+  
+  /* Estilo para etiquetas */
+  .label {
+    font-weight: bold; /* Peso de la fuente */
+  }
+  
+  /* Estilo para los inputs */
+  .input {
+    border: 2px solid #e0e0e0; /* Borde gris claro */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 10px; /* Espaciado interno */
+    width: 100%; /* Ocupa todo el ancho */
+    transition: border-color 0.3s; /* Transición suave para el borde */
+  }
+  
+  /* Color del borde en foco */
+  .input:focus {
+    border-color: #6a11cb; /* Cambiar color del borde al enfocar */
+  }
+  
+  /* Estilo para botones */
+  .btn {
+    background-color: #6a11cb; /* Color de fondo */
+    color: white; /* Texto blanco */
+    border: none; /* Sin borde */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 10px; /* Espaciado interno */
+    cursor: pointer; /* Cursor de mano */
+    transition: background-color 0.3s; /* Transición suave */
+    width: 100%; /* Botones ocupan todo el ancho */
+    margin-top: 0.5rem; /* Espaciado superior para botones */
+  }
+  
+  .btn:hover {
+    background-color: #2575fc; /* Color de fondo al pasar el ratón */
+  }
+  
+  /* Estilo para alertas */
+  .alert {
+    background-color: #ffcccc; /* Fondo rojo claro */
+    color: #d8000c; /* Color de texto rojo oscuro */
+    border: 1px solid #d8000c; /* Borde rojo */
+    padding: 10px; /* Espaciado interno */
+    border-radius: 8px; /* Bordes redondeados */
+    display: flex; /* Flex para icono y texto */
+    align-items: center; /* Centrar verticalmente */
+  }
+  
+  /* Icono de alerta */
+  .alert i {
+    margin-right: 5px; /* Espacio entre icono y texto */
+  }
+  
+  /* Estilos para la vista de la lista */
+  .drawer {
+    display: flex;
+    flex-direction: column; /* Coloca el contenido en columnas */
+  }
+  
+  .drawer-content {
+    flex: 1; /* Toma todo el espacio disponible */
+    overflow-y: auto; /* Permite desplazamiento vertical */
+  }
+  
+  /* Estilos del drawer */
+  .drawer-side {
+    width: 240px; /* Ancho del drawer */
+    background-color: #ffffff; /* Color de fondo */
+  }
+  
+  /* Estilos para la lista de usuarios */
+  .menu {
+    list-style: none; /* Sin estilo de lista */
+    padding: 0; /* Sin relleno */
+    background-color: #e7e7e7; /* Fondo gris claro para el menú */
+  }
+  
+  /* Título del menú */
+  .menu-title {
+    font-weight: bold; /* Títulos en negrita */
+    margin-bottom: 10px; /* Espacio abajo */
+    padding: 10px; /* Espaciado interno */
+  }
+  
+  /* Estilo para el input del drawer */
+  .input-group {
+    display: flex; /* Flex para input y botón */
+    align-items: center; /* Alinear verticalmente */
+  }
+  
+  /* Tooltip */
+  .tooltip {
+    position: relative; /* Posición relativa para el tooltip */
+  }
+  
+  .tooltip::after {
+    content: attr(data-tip); /* Contenido del tooltip */
+    position: absolute;
+    background-color: #333; /* Fondo del tooltip */
+    color: white; /* Color de texto del tooltip */
+    padding: 5px;
+    border-radius: 5px;
+    bottom: 100%; /* Posición arriba del elemento */
+    left: 50%;
+    transform: translateX(-50%);
+    visibility: hidden; /* Ocultar por defecto */
+    opacity: 0; /* Opacidad 0 por defecto */
+    transition: opacity 0.3s; /* Transición suave */
+  }
+  
+  .tooltip:hover::after {
+    visibility: visible; /* Mostrar tooltip al pasar el ratón */
+    opacity: 1; /* Opacidad total */
+  }
+  
