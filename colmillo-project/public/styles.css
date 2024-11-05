@@ -14,7 +14,7 @@ body {
   
   /* Estilo para la tarjeta de login */
   .card {
-    background-color: #333; /* Fondo blanco para la tarjeta */
+    background-color: #333; /* Fondo para la tarjeta */
     border-radius: 12px; /* Bordes redondeados */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -31,8 +31,9 @@ body {
   h1 {
     margin: 20px 0; /* Margen arriba y abajo */
     font-size: 2.5rem; /* Tamaño de fuente */
+    font-weight: bold;
     text-align: center; /* Centrar texto */
-    background: linear-gradient(to right, #6a11cb, #2575fc); /* Gradiente */
+    background: linear-gradient(to right, #ffffff, #ffffff); /* Gradiente */
     -webkit-background-clip: text; /* Clip del fondo para texto */
     -webkit-text-fill-color: transparent; /* Relleno del texto transparente */
   }
@@ -54,22 +55,26 @@ body {
   
   /* Estilo para los inputs */
   .input {
-    border: 2px solid #e0e0e0; /* Borde gris claro */
+    border: 2px solid #575555; /* Borde gris claro */
     border-radius: 8px; /* Bordes redondeados */
     padding: 10px; /* Espaciado interno */
     width: 100%; /* Ocupa todo el ancho */
     transition: border-color 0.3s; /* Transición suave para el borde */
   }
+
+  .input.input:bordered {
+    border-color: #575555; /* Cambiar color del borde al enfocar */
+  }
   
   /* Color del borde en foco */
   .input:focus {
-    border-color: #6a11cb; /* Cambiar color del borde al enfocar */
+    border-color: #575555; /* Cambiar color del borde al enfocar */
   }
   
   /* Estilo para botones */
   .btn {
-    background-color: #6a11cb; /* Color de fondo */
-    color: white; /* Texto blanco */
+    background-color: #575555; /* Color de fondo */
+    color: rgb(206, 222, 243); /* Texto blanco */
     border: none; /* Sin borde */
     border-radius: 8px; /* Bordes redondeados */
     padding: 10px; /* Espaciado interno */
@@ -160,4 +165,11 @@ body {
     visibility: visible; /* Mostrar tooltip al pasar el ratón */
     opacity: 1; /* Opacidad total */
   }
+
+.logo {
+    width: 32px; /* Ajusta el tamaño según necesites */
+    height: 32px;
+    border-radius: 50%; /* Hace que la imagen sea circular */
+}
+
   

@@ -14,8 +14,8 @@ const loginTemplate = (error) => `<div class="login">
 <div class="card">
   <div>
   <img src="assets/toji.jpg" alt="Logo" class="bordered-image">
-    <h1 class="text-5xl font-bold text-center my-5 bg-clip-text bg-gradient-to-br">
-      Iniciar sesión
+    <h1>
+      Sign In
     </h1>
   </div>
   <form class="card-body pt-2">
