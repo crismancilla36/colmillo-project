@@ -44,15 +44,16 @@ const loginTemplate = (error) => `<div class="login">
 
 // Main lista view
 const listaTemplate =
-  () => `<div class="drawer drawer-mobile"><input id="drawer-left" type="checkbox" class="drawer-toggle">
-  <div class="drawer-content flex flex-col">
-    <div class="navbar w-full">
+  () => `<div class="drawer drawer-mobile">
+  <input id="drawer-left" type="checkbox" class="drawer-toggle">
+  <div class="drawer-content">
+    <div class="navbar">
       <div class="navbar-start">
         <label for="drawer-left" class="btn btn-square btn-ghost lg:hidden drawer-button">
           <i class="i-feather-menu text-lg"></i>
         </label>
       </div>
-      <div class="navbar-center flex flex-col">
+      <div class="navbar-center">
         <p>Feathers lista</p>
         <label for="drawer-right" class="text-xs cursor-pointer">
           <span class="online-count">0</span> User(s)
@@ -60,20 +61,23 @@ const listaTemplate =
       </div>
       <div class="navbar-end">
         <div class="tooltip tooltip-left" data-tip="Logout">
-        <button type="button" id="logout" class="btn btn-ghost"><i class="i-feather-log-out text-lg"></i></button>
-      </div>
+          <button type="button" id="logout" class="btn btn-ghost">
+            <i class="i-feather-log-out text-lg"></i>
+          </button>
+        </div>
       </div>
     </div>
     <div id="lista" class="h-full overflow-y-auto px-3"></div>
-    <div class="form-control w-full py-2 px-3">
+    <div class="form-control">
       <form class="input-group overflow-hidden" id="send-tarea">
-        <input name="text" type="text" placeholder="Compose tarea" class="input input-bordered w-full">
+        <input name="text" type="text" placeholder="Compose tarea" class="input">
         <button type="submit" class="btn">Send</button>
       </form>
     </div>
   </div>
-  <div class="drawer-side"><label for="drawer-left" class="drawer-overlay"></label>
-    <ul class="menu user-list compact p-2 overflow-y-auto w-60 bg-base-300 text-base-content">
+  <div class="drawer-side">
+    <label for="drawer-left" class="drawer-overlay"></label>
+    <ul class="menu user-list compact p-2 overflow-y-auto w-60">
       <li class="menu-title"><span>Users</span></li>
     </ul>
   </div>

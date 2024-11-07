@@ -81,7 +81,6 @@ body {
     cursor: pointer; /* Cursor de mano */
     transition: background-color 0.3s; /* Transición suave */
     width: 100%; /* Botones ocupan todo el ancho */
-    margin-top: 0.5rem; /* Espaciado superior para botones */
   }
   
   .btn:hover {
@@ -107,18 +106,25 @@ body {
   /* Estilos para la vista de la lista */
   .drawer {
     display: flex;
-    flex-direction: column; /* Coloca el contenido en columnas */
+    flex-direction: row; /* Coloca el contenido en fila, con el drawer-side a la izquierda */
   }
   
   .drawer-content {
-    flex: 1; /* Toma todo el espacio disponible */
+    flex-grow: 1; /* Toma el espacio disponible restante */
+    margin-left: 260px; /* El contenido se desplaza a la derecha para no sobreponerse al drawer */
     overflow-y: auto; /* Permite desplazamiento vertical */
+    padding: 1rem; /* Añade un pequeño padding al contenido */
   }
   
   /* Estilos del drawer */
   .drawer-side {
-    width: 240px; /* Ancho del drawer */
+    width: 260px; /* Ancho fijo del drawer */
     background-color: #ffffff; /* Color de fondo */
+    position: fixed; /* Fija el drawer en el lado izquierdo */
+    top: 0; /* Alinea el drawer al principio */
+    left: 0; /* Alinea el drawer a la izquierda */
+    bottom: 0; /* Asegura que el drawer ocupe toda la altura */
+    z-index: 10; /* Asegura que el drawer esté por encima del contenido */
   }
   
   /* Estilos para la lista de usuarios */
@@ -139,6 +145,7 @@ body {
   .input-group {
     display: flex; /* Flex para input y botón */
     align-items: center; /* Alinear verticalmente */
+    width: 100%;
   }
   
   /* Tooltip */
@@ -166,10 +173,195 @@ body {
     opacity: 1; /* Opacidad total */
   }
 
-.logo {
-    width: 32px; /* Ajusta el tamaño según necesites */
+  .logo {
+    width: 32px;
+    /* Ajusta el tamaño según necesites */
     height: 32px;
-    border-radius: 50%; /* Hace que la imagen sea circular */
+    border-radius: 50%;
+    /* Hace que la imagen sea circular */
+  }
+
+  /* Base Styles */
+
+.drawer,
+.drawer-mobile {
+  display: flex;
+  height: 100%;
 }
 
-  
+.drawer-toggle {
+  display: none;
+}
+
+.drawer-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.drawer-side {
+  position: absolute;
+  height: 100%;
+  width: 260px; /* Drawer width */
+  background-color: #333; /* Base drawer background */
+}
+
+.drawer-overlay {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  /*background-color: #333;  Navbar background color */
+  padding: 0.5rem;
+}
+
+.navbar-start,
+.navbar-center,
+.navbar-end {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-center {
+  flex-direction: column;
+}
+
+.navbar-center p {
+  margin: 0;
+  font-weight: bold;
+}
+
+.navbar-center label {
+  font-size: 0.75rem; /* text-xs */
+  cursor: pointer;
+}
+
+.online-count {
+  font-weight: bold;
+}
+
+.tooltip {
+  position: relative;
+}
+
+.tooltip-left::after {
+  content: attr(data-tip);
+  position: absolute;
+  left: -5px;
+  bottom: 100%;
+  margin-bottom: 5px;
+  padding: 0.5rem;
+  background-color: #333;
+  color: #fff;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.tooltip-left:hover::after {
+  visibility: hidden;
+  opacity: 1;
+}
+
+/* Form and Input Group */
+.form-control {
+  width: 100%;
+  padding-top: 0.5rem;  /* py-2 */
+  padding-bottom: 0.5rem; /* py-2 */
+  padding-left: 0.75rem;  /* px-3 */
+  padding-right: 0.75rem; /* px-3 */
+  /*box-sizing: border-box;  Ensures padding doesn't overflow */
+}
+
+.w-full {
+  width: 100%;
+}
+
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.input {
+  width: 100%;
+  border: 1px solid #333;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+/* Button Styles */
+.btn {
+  width: auto;
+  height: auto;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;  
+  transition: background-color 0.3s;
+}
+
+.btn-square {
+  width: 2.5rem;   /* Ajusta al tamaño cuadrado deseado */
+  height: 2.5rem;  /* Ajusta al tamaño cuadrado deseado */
+  padding: 0;
+}
+
+.btn-ghost {
+  background-color: transparent;
+  color: inherit;
+}
+
+.btn-ghost:hover {
+  background-color: rgba(0, 0, 0, 0.1); /* Color de fondo al pasar el cursor */
+}
+
+/* Drawer Button */
+.drawer-button {
+  display: inline-flex;
+}
+
+/* Hidden on Large Screens */
+.lg\\:hidden {
+  display: none;
+}
+
+/* Responsive: Hidden on lg and up */
+@media (max-width: 1024px) {
+  .lg\\:hidden {
+    display: inline-flex;
+  }
+}
+
+.btn:hover {
+  background-color: #78797a;
+}
+
+/* User List Styles */
+.user-list {
+  padding: 1rem;
+  background-color: #333;
+  color: #ffffff; /* Text color */
+}
+
+.menu-title span {
+  font-weight: bold;
+}
